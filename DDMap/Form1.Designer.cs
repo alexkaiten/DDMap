@@ -126,7 +126,7 @@
             // 
             // mapCreationControl
             // 
-            this.mapCreationControl.Location = new System.Drawing.Point(16, 33);
+            this.mapCreationControl.Location = new System.Drawing.Point(3, 33);
             this.mapCreationControl.Margin = new System.Windows.Forms.Padding(5);
             this.mapCreationControl.Name = "mapCreationControl";
             this.mapCreationControl.Size = new System.Drawing.Size(1636, 688);
