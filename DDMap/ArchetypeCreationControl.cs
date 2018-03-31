@@ -16,9 +16,7 @@ namespace DDMap
 {
     public partial class ArchetypeCreationControl : UserControl
     {
-        private Image Button() => Properties.Resources.Button;
-        private Image HoveredButton() => Properties.Resources.ButtonHov;
-        private Image ClickedButton() => Properties.Resources.ButtonClicked;
+        
         List<Archetype> archetypes = new List<Archetype>();
         public DataMap dataMap;
 
@@ -29,6 +27,11 @@ namespace DDMap
             fillDLLs();
             resetFields();
             listBox2.DisplayMember = "CharacterName";
+            this.newArchetypeBtn.Text = "New Character";
+            this.addCharacterBtn.Text = "Add Character";
+            this.addArchetypeBtn.Text = "Add Archetype";
+            this.deleteCharacterBtn.Text = "DeleteCharacter";
+            this.saveArchetypesBtn.Text = "Save Archetypes";
         }
 
         private void fillDLLs()
@@ -313,6 +316,11 @@ namespace DDMap
                 dataMap.Characters.Remove((Character)listBox2.SelectedItem);
             }
             ((Form1)this.Parent).UpdateCharacterList();
+        }
+
+        private void newArchetypeBtn_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

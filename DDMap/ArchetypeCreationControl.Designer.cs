@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ArchetypeCreationControl));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pf = new System.Windows.Forms.NumericUpDown();
@@ -118,15 +119,15 @@
             this.archetypesLabel = new System.Windows.Forms.Label();
             this.characterArchetypeLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.deleteCharacterBtn = new System.Windows.Forms.Button();
             this.charactersLabel = new System.Windows.Forms.Label();
             this.listBox2 = new System.Windows.Forms.ListBox();
-            this.addCharacterBtn = new System.Windows.Forms.Button();
-            this.saveArchetypesBtn = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.addArchetypeBtn = new System.Windows.Forms.Button();
-            this.newArchetypeBtn = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.addCharacterBtn = new DDMap.FantasyButton();
+            this.addArchetypeBtn = new DDMap.FantasyButton();
+            this.newArchetypeBtn = new DDMap.FantasyButton();
+            this.deleteCharacterBtn = new DDMap.FantasyButton();
+            this.saveArchetypesBtn = new DDMap.FantasyButton();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pf)).BeginInit();
@@ -156,15 +157,15 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.saveArchetypesBtn);
+            this.panel1.Controls.Add(this.addCharacterBtn);
+            this.panel1.Controls.Add(this.addArchetypeBtn);
+            this.panel1.Controls.Add(this.newArchetypeBtn);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.archetypesLabel);
             this.panel1.Controls.Add(this.characterArchetypeLabel);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.addCharacterBtn);
-            this.panel1.Controls.Add(this.saveArchetypesBtn);
             this.panel1.Controls.Add(this.listBox1);
-            this.panel1.Controls.Add(this.addArchetypeBtn);
-            this.panel1.Controls.Add(this.newArchetypeBtn);
             this.panel1.Location = new System.Drawing.Point(5, 5);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
@@ -1202,17 +1203,6 @@
             this.panel2.Size = new System.Drawing.Size(522, 669);
             this.panel2.TabIndex = 21;
             // 
-            // deleteCharacterBtn
-            // 
-            this.deleteCharacterBtn.Location = new System.Drawing.Point(176, 597);
-            this.deleteCharacterBtn.Margin = new System.Windows.Forms.Padding(4);
-            this.deleteCharacterBtn.Name = "deleteCharacterBtn";
-            this.deleteCharacterBtn.Size = new System.Drawing.Size(148, 28);
-            this.deleteCharacterBtn.TabIndex = 4;
-            this.deleteCharacterBtn.Text = "Delete Character";
-            this.deleteCharacterBtn.UseVisualStyleBackColor = true;
-            this.deleteCharacterBtn.Click += new System.EventHandler(this.deleteCharacterBtn_Click);
-            // 
             // charactersLabel
             // 
             this.charactersLabel.AutoSize = true;
@@ -1233,28 +1223,6 @@
             this.listBox2.Size = new System.Drawing.Size(453, 500);
             this.listBox2.TabIndex = 2;
             // 
-            // addCharacterBtn
-            // 
-            this.addCharacterBtn.Location = new System.Drawing.Point(265, 597);
-            this.addCharacterBtn.Margin = new System.Windows.Forms.Padding(4);
-            this.addCharacterBtn.Name = "addCharacterBtn";
-            this.addCharacterBtn.Size = new System.Drawing.Size(165, 28);
-            this.addCharacterBtn.TabIndex = 20;
-            this.addCharacterBtn.Text = "Add Character";
-            this.addCharacterBtn.UseVisualStyleBackColor = true;
-            this.addCharacterBtn.Click += new System.EventHandler(this.addCharacterBtn_Click);
-            // 
-            // saveArchetypesBtn
-            // 
-            this.saveArchetypesBtn.Location = new System.Drawing.Point(1365, 597);
-            this.saveArchetypesBtn.Margin = new System.Windows.Forms.Padding(4);
-            this.saveArchetypesBtn.Name = "saveArchetypesBtn";
-            this.saveArchetypesBtn.Size = new System.Drawing.Size(147, 28);
-            this.saveArchetypesBtn.TabIndex = 19;
-            this.saveArchetypesBtn.Text = "Save Archetypes";
-            this.saveArchetypesBtn.UseVisualStyleBackColor = true;
-            this.saveArchetypesBtn.Click += new System.EventHandler(this.saveArchetypesBtn_Click);
-            // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
@@ -1266,29 +1234,60 @@
             this.listBox1.TabIndex = 18;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
+            // addCharacterBtn
+            // 
+            this.addCharacterBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("addCharacterBtn.BackgroundImage")));
+            this.addCharacterBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.addCharacterBtn.ForeColor = System.Drawing.Color.White;
+            this.addCharacterBtn.Location = new System.Drawing.Point(292, 597);
+            this.addCharacterBtn.Name = "addCharacterBtn";
+            this.addCharacterBtn.Size = new System.Drawing.Size(130, 30);
+            this.addCharacterBtn.TabIndex = 27;
+            this.addCharacterBtn.Click += new System.EventHandler(this.addCharacterBtn_Click);
+            // 
             // addArchetypeBtn
             // 
-            this.addArchetypeBtn.Location = new System.Drawing.Point(471, 597);
-            this.addArchetypeBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.addArchetypeBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("addArchetypeBtn.BackgroundImage")));
+            this.addArchetypeBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.addArchetypeBtn.ForeColor = System.Drawing.Color.White;
+            this.addArchetypeBtn.Location = new System.Drawing.Point(492, 597);
             this.addArchetypeBtn.Name = "addArchetypeBtn";
-            this.addArchetypeBtn.Size = new System.Drawing.Size(152, 28);
-            this.addArchetypeBtn.TabIndex = 16;
-            this.addArchetypeBtn.Text = "Add Archetype";
-            this.addArchetypeBtn.UseVisualStyleBackColor = true;
+            this.addArchetypeBtn.Size = new System.Drawing.Size(130, 30);
+            this.addArchetypeBtn.TabIndex = 26;
             this.addArchetypeBtn.Click += new System.EventHandler(this.addArchetypeBtn_Click);
             // 
             // newArchetypeBtn
             // 
-            this.newArchetypeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newArchetypeBtn.ForeColor = System.Drawing.Color.Black;
-            this.newArchetypeBtn.Location = new System.Drawing.Point(56, 597);
-            this.newArchetypeBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.newArchetypeBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("newArchetypeBtn.BackgroundImage")));
+            this.newArchetypeBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.newArchetypeBtn.ForeColor = System.Drawing.Color.White;
+            this.newArchetypeBtn.Location = new System.Drawing.Point(83, 597);
             this.newArchetypeBtn.Name = "newArchetypeBtn";
-            this.newArchetypeBtn.Size = new System.Drawing.Size(123, 28);
-            this.newArchetypeBtn.TabIndex = 14;
-            this.newArchetypeBtn.Text = "New Character";
-            this.newArchetypeBtn.UseVisualStyleBackColor = true;
+            this.newArchetypeBtn.Size = new System.Drawing.Size(130, 30);
+            this.newArchetypeBtn.TabIndex = 25;
             this.newArchetypeBtn.Click += new System.EventHandler(this.newArchetypeBtn_Click);
+            // 
+            // deleteCharacterBtn
+            // 
+            this.deleteCharacterBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("deleteCharacterBtn.BackgroundImage")));
+            this.deleteCharacterBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.deleteCharacterBtn.ForeColor = System.Drawing.Color.White;
+            this.deleteCharacterBtn.Location = new System.Drawing.Point(187, 597);
+            this.deleteCharacterBtn.Name = "deleteCharacterBtn";
+            this.deleteCharacterBtn.Size = new System.Drawing.Size(130, 30);
+            this.deleteCharacterBtn.TabIndex = 5;
+            this.deleteCharacterBtn.Click += new System.EventHandler(this.deleteCharacterBtn_Click);
+            // 
+            // saveArchetypesBtn
+            // 
+            this.saveArchetypesBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("saveArchetypesBtn.BackgroundImage")));
+            this.saveArchetypesBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.saveArchetypesBtn.ForeColor = System.Drawing.Color.White;
+            this.saveArchetypesBtn.Location = new System.Drawing.Point(1374, 597);
+            this.saveArchetypesBtn.Name = "saveArchetypesBtn";
+            this.saveArchetypesBtn.Size = new System.Drawing.Size(130, 30);
+            this.saveArchetypesBtn.TabIndex = 6;
+            this.saveArchetypesBtn.Click += new System.EventHandler(this.saveArchetypesBtn_Click);
             // 
             // ArchetypeCreationControl
             // 
@@ -1333,11 +1332,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button addArchetypeBtn;
-        private System.Windows.Forms.Button newArchetypeBtn;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button saveArchetypesBtn;
-        private System.Windows.Forms.Button addCharacterBtn;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.Label archetypesLabel;
@@ -1429,7 +1424,11 @@
         private System.Windows.Forms.Panel colorPanel;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ColorDialog colorDialog1;
-        private System.Windows.Forms.Button deleteCharacterBtn;
         private System.Windows.Forms.NumericUpDown pf;
+        private FantasyButton newArchetypeBtn;
+        private FantasyButton addCharacterBtn;
+        private FantasyButton addArchetypeBtn;
+        private FantasyButton deleteCharacterBtn;
+        private FantasyButton saveArchetypesBtn;
     }
 }
