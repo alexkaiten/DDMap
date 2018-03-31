@@ -16,6 +16,9 @@ namespace DDMap
 {
     public partial class ArchetypeCreationControl : UserControl
     {
+        private Image Button() => Properties.Resources.Button;
+        private Image HoveredButton() => Properties.Resources.ButtonHov;
+        private Image ClickedButton() => Properties.Resources.ButtonClicked;
         List<Archetype> archetypes = new List<Archetype>();
         public DataMap dataMap;
 

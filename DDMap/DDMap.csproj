@@ -61,6 +61,12 @@
     <Compile Include="DialogForm.Designer.cs">
       <DependentUpon>DialogForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FantasyButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FantasyButton.Designer.cs">
+      <DependentUpon>FantasyButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,29 +94,31 @@
     <EmbeddedResource Include="DialogForm.resx">
       <DependentUpon>DialogForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FantasyButton.resx">
+      <DependentUpon>FantasyButton.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MapCreationControl.resx">
       <DependentUpon>MapCreationControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MapControl.resx">
+      <DependentUpon>MapControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <EmbeddedResource Include="MapControl.resx">
-      <DependentUpon>MapControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -123,6 +131,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\carta-pergamena_21123451.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonClicked.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonHov.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carta-pergamena_211234511.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonClicked1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonHov1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

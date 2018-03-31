@@ -30,6 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pf = new System.Windows.Forms.NumericUpDown();
             this.colorPanel = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
             this.gradoSfida = new System.Windows.Forms.NumericUpDown();
@@ -126,9 +127,9 @@
             this.addArchetypeBtn = new System.Windows.Forms.Button();
             this.newArchetypeBtn = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.pf = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pf)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gradoSfida)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carisma)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.saggezza)).BeginInit();
@@ -150,11 +151,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.iniziativa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dadiVitaNumericUpDown)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pf)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.archetypesLabel);
             this.panel1.Controls.Add(this.characterArchetypeLabel);
@@ -165,7 +166,7 @@
             this.panel1.Controls.Add(this.addArchetypeBtn);
             this.panel1.Controls.Add(this.newArchetypeBtn);
             this.panel1.Location = new System.Drawing.Point(5, 5);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1627, 668);
             this.panel1.TabIndex = 0;
@@ -260,17 +261,35 @@
             this.panel3.Controls.Add(this.labelShortName);
             this.panel3.Controls.Add(this.labelName);
             this.panel3.Location = new System.Drawing.Point(19, 33);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(629, 556);
             this.panel3.TabIndex = 24;
+            // 
+            // pf
+            // 
+            this.pf.Location = new System.Drawing.Point(121, 180);
+            this.pf.Margin = new System.Windows.Forms.Padding(4);
+            this.pf.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.pf.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            -2147483648});
+            this.pf.Name = "pf";
+            this.pf.Size = new System.Drawing.Size(52, 22);
+            this.pf.TabIndex = 130;
             // 
             // colorPanel
             // 
             this.colorPanel.BackColor = System.Drawing.Color.Blue;
             this.colorPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.colorPanel.Location = new System.Drawing.Point(121, 114);
-            this.colorPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.colorPanel.Margin = new System.Windows.Forms.Padding(4);
             this.colorPanel.Name = "colorPanel";
             this.colorPanel.Size = new System.Drawing.Size(167, 23);
             this.colorPanel.TabIndex = 129;
@@ -289,7 +308,7 @@
             // gradoSfida
             // 
             this.gradoSfida.Location = new System.Drawing.Point(121, 922);
-            this.gradoSfida.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gradoSfida.Margin = new System.Windows.Forms.Padding(4);
             this.gradoSfida.Minimum = new decimal(new int[] {
             100,
             0,
@@ -302,7 +321,7 @@
             // carisma
             // 
             this.carisma.Location = new System.Drawing.Point(460, 763);
-            this.carisma.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.carisma.Margin = new System.Windows.Forms.Padding(4);
             this.carisma.Minimum = new decimal(new int[] {
             100,
             0,
@@ -315,7 +334,7 @@
             // saggezza
             // 
             this.saggezza.Location = new System.Drawing.Point(397, 762);
-            this.saggezza.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.saggezza.Margin = new System.Windows.Forms.Padding(4);
             this.saggezza.Minimum = new decimal(new int[] {
             100,
             0,
@@ -328,7 +347,7 @@
             // intelligenza
             // 
             this.intelligenza.Location = new System.Drawing.Point(333, 762);
-            this.intelligenza.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.intelligenza.Margin = new System.Windows.Forms.Padding(4);
             this.intelligenza.Minimum = new decimal(new int[] {
             100,
             0,
@@ -341,7 +360,7 @@
             // costituzione
             // 
             this.costituzione.Location = new System.Drawing.Point(263, 763);
-            this.costituzione.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.costituzione.Margin = new System.Windows.Forms.Padding(4);
             this.costituzione.Minimum = new decimal(new int[] {
             100,
             0,
@@ -354,7 +373,7 @@
             // destrezzaParametro
             // 
             this.destrezzaParametro.Location = new System.Drawing.Point(189, 762);
-            this.destrezzaParametro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.destrezzaParametro.Margin = new System.Windows.Forms.Padding(4);
             this.destrezzaParametro.Minimum = new decimal(new int[] {
             100,
             0,
@@ -367,7 +386,7 @@
             // forza
             // 
             this.forza.Location = new System.Drawing.Point(121, 762);
-            this.forza.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.forza.Margin = new System.Windows.Forms.Padding(4);
             this.forza.Minimum = new decimal(new int[] {
             100,
             0,
@@ -380,7 +399,7 @@
             // volonta
             // 
             this.volonta.Location = new System.Drawing.Point(313, 708);
-            this.volonta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.volonta.Margin = new System.Windows.Forms.Padding(4);
             this.volonta.Minimum = new decimal(new int[] {
             100,
             0,
@@ -393,7 +412,7 @@
             // riflessi
             // 
             this.riflessi.Location = new System.Drawing.Point(213, 708);
-            this.riflessi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.riflessi.Margin = new System.Windows.Forms.Padding(4);
             this.riflessi.Minimum = new decimal(new int[] {
             100,
             0,
@@ -406,7 +425,7 @@
             // tempra
             // 
             this.tempra.Location = new System.Drawing.Point(121, 708);
-            this.tempra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tempra.Margin = new System.Windows.Forms.Padding(4);
             this.tempra.Minimum = new decimal(new int[] {
             100,
             0,
@@ -419,7 +438,7 @@
             // temp
             // 
             this.temp.Location = new System.Drawing.Point(551, 336);
-            this.temp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.temp.Margin = new System.Windows.Forms.Padding(4);
             this.temp.Minimum = new decimal(new int[] {
             100,
             0,
@@ -433,7 +452,7 @@
             // vari
             // 
             this.vari.Location = new System.Drawing.Point(491, 336);
-            this.vari.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vari.Margin = new System.Windows.Forms.Padding(4);
             this.vari.Minimum = new decimal(new int[] {
             100,
             0,
@@ -447,7 +466,7 @@
             // naturale
             // 
             this.naturale.Location = new System.Drawing.Point(424, 336);
-            this.naturale.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.naturale.Margin = new System.Windows.Forms.Padding(4);
             this.naturale.Minimum = new decimal(new int[] {
             100,
             0,
@@ -461,7 +480,7 @@
             // taglia
             // 
             this.taglia.Location = new System.Drawing.Point(352, 336);
-            this.taglia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.taglia.Margin = new System.Windows.Forms.Padding(4);
             this.taglia.Minimum = new decimal(new int[] {
             100,
             0,
@@ -475,7 +494,7 @@
             // destrezza
             // 
             this.destrezza.Location = new System.Drawing.Point(288, 336);
-            this.destrezza.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.destrezza.Margin = new System.Windows.Forms.Padding(4);
             this.destrezza.Minimum = new decimal(new int[] {
             100,
             0,
@@ -489,7 +508,7 @@
             // scudo
             // 
             this.scudo.Location = new System.Drawing.Point(221, 336);
-            this.scudo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.scudo.Margin = new System.Windows.Forms.Padding(4);
             this.scudo.Minimum = new decimal(new int[] {
             100,
             0,
@@ -503,7 +522,7 @@
             // armatura
             // 
             this.armatura.Location = new System.Drawing.Point(148, 337);
-            this.armatura.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.armatura.Margin = new System.Windows.Forms.Padding(4);
             this.armatura.Minimum = new decimal(new int[] {
             100,
             0,
@@ -517,7 +536,7 @@
             // velocita
             // 
             this.velocita.Location = new System.Drawing.Point(360, 278);
-            this.velocita.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.velocita.Margin = new System.Windows.Forms.Padding(4);
             this.velocita.Minimum = new decimal(new int[] {
             100,
             0,
@@ -530,7 +549,7 @@
             // iniziativa
             // 
             this.iniziativa.Location = new System.Drawing.Point(148, 278);
-            this.iniziativa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iniziativa.Margin = new System.Windows.Forms.Padding(4);
             this.iniziativa.Minimum = new decimal(new int[] {
             100,
             0,
@@ -543,7 +562,7 @@
             // dadiVitaNumericUpDown
             // 
             this.dadiVitaNumericUpDown.Location = new System.Drawing.Point(143, 146);
-            this.dadiVitaNumericUpDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dadiVitaNumericUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.dadiVitaNumericUpDown.Minimum = new decimal(new int[] {
             100,
             0,
@@ -556,7 +575,7 @@
             // lootTextBox
             // 
             this.lootTextBox.Location = new System.Drawing.Point(121, 950);
-            this.lootTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lootTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.lootTextBox.Name = "lootTextBox";
             this.lootTextBox.Size = new System.Drawing.Size(455, 223);
             this.lootTextBox.TabIndex = 107;
@@ -695,7 +714,7 @@
             // climaTerrenoTextBox
             // 
             this.climaTerrenoTextBox.Location = new System.Drawing.Point(121, 886);
-            this.climaTerrenoTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.climaTerrenoTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.climaTerrenoTextBox.Name = "climaTerrenoTextBox";
             this.climaTerrenoTextBox.Size = new System.Drawing.Size(455, 22);
             this.climaTerrenoTextBox.TabIndex = 77;
@@ -713,7 +732,7 @@
             // talentiTextBox
             // 
             this.talentiTextBox.Location = new System.Drawing.Point(121, 794);
-            this.talentiTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.talentiTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.talentiTextBox.Name = "talentiTextBox";
             this.talentiTextBox.Size = new System.Drawing.Size(455, 84);
             this.talentiTextBox.TabIndex = 75;
@@ -732,7 +751,7 @@
             // qualitaSpecialiTextBox
             // 
             this.qualitaSpecialiTextBox.Location = new System.Drawing.Point(121, 590);
-            this.qualitaSpecialiTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.qualitaSpecialiTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.qualitaSpecialiTextBox.Name = "qualitaSpecialiTextBox";
             this.qualitaSpecialiTextBox.Size = new System.Drawing.Size(455, 84);
             this.qualitaSpecialiTextBox.TabIndex = 73;
@@ -751,7 +770,7 @@
             // attacchiSpecialiTextBox
             // 
             this.attacchiSpecialiTextBox.Location = new System.Drawing.Point(121, 497);
-            this.attacchiSpecialiTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.attacchiSpecialiTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.attacchiSpecialiTextBox.Name = "attacchiSpecialiTextBox";
             this.attacchiSpecialiTextBox.Size = new System.Drawing.Size(455, 84);
             this.attacchiSpecialiTextBox.TabIndex = 71;
@@ -770,7 +789,7 @@
             // facciaPortataTextBox
             // 
             this.facciaPortataTextBox.Location = new System.Drawing.Point(121, 465);
-            this.facciaPortataTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.facciaPortataTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.facciaPortataTextBox.Name = "facciaPortataTextBox";
             this.facciaPortataTextBox.Size = new System.Drawing.Size(455, 22);
             this.facciaPortataTextBox.TabIndex = 69;
@@ -938,7 +957,7 @@
             // danniTextBox
             // 
             this.danniTextBox.Location = new System.Drawing.Point(121, 433);
-            this.danniTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.danniTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.danniTextBox.Name = "danniTextBox";
             this.danniTextBox.Size = new System.Drawing.Size(455, 22);
             this.danniTextBox.TabIndex = 44;
@@ -956,7 +975,7 @@
             // attacchiTextBox
             // 
             this.attacchiTextBox.Location = new System.Drawing.Point(121, 401);
-            this.attacchiTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.attacchiTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.attacchiTextBox.Name = "attacchiTextBox";
             this.attacchiTextBox.Size = new System.Drawing.Size(455, 22);
             this.attacchiTextBox.TabIndex = 42;
@@ -1015,7 +1034,7 @@
             // 
             this.dadiVitaDDL.FormattingEnabled = true;
             this.dadiVitaDDL.Location = new System.Drawing.Point(267, 145);
-            this.dadiVitaDDL.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dadiVitaDDL.Margin = new System.Windows.Forms.Padding(4);
             this.dadiVitaDDL.Name = "dadiVitaDDL";
             this.dadiVitaDDL.Size = new System.Drawing.Size(60, 24);
             this.dadiVitaDDL.TabIndex = 34;
@@ -1034,7 +1053,7 @@
             // 
             this.AlignmentDDL.FormattingEnabled = true;
             this.AlignmentDDL.Location = new System.Drawing.Point(121, 244);
-            this.AlignmentDDL.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AlignmentDDL.Margin = new System.Windows.Forms.Padding(4);
             this.AlignmentDDL.Name = "AlignmentDDL";
             this.AlignmentDDL.Size = new System.Drawing.Size(455, 24);
             this.AlignmentDDL.TabIndex = 29;
@@ -1052,7 +1071,7 @@
             // infoTextBox
             // 
             this.infoTextBox.Location = new System.Drawing.Point(121, 1182);
-            this.infoTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.infoTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.infoTextBox.Name = "infoTextBox";
             this.infoTextBox.Size = new System.Drawing.Size(455, 223);
             this.infoTextBox.TabIndex = 27;
@@ -1072,7 +1091,7 @@
             // 
             this.sizeDDL.FormattingEnabled = true;
             this.sizeDDL.Location = new System.Drawing.Point(121, 210);
-            this.sizeDDL.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sizeDDL.Margin = new System.Windows.Forms.Padding(4);
             this.sizeDDL.Name = "sizeDDL";
             this.sizeDDL.Size = new System.Drawing.Size(455, 24);
             this.sizeDDL.TabIndex = 25;
@@ -1100,7 +1119,7 @@
             // raceTextBox
             // 
             this.raceTextBox.Location = new System.Drawing.Point(121, 81);
-            this.raceTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.raceTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.raceTextBox.Name = "raceTextBox";
             this.raceTextBox.Size = new System.Drawing.Size(455, 22);
             this.raceTextBox.TabIndex = 19;
@@ -1108,7 +1127,7 @@
             // shortNameTextBox
             // 
             this.shortNameTextBox.Location = new System.Drawing.Point(121, 49);
-            this.shortNameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.shortNameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.shortNameTextBox.Name = "shortNameTextBox";
             this.shortNameTextBox.Size = new System.Drawing.Size(455, 22);
             this.shortNameTextBox.TabIndex = 18;
@@ -1116,7 +1135,7 @@
             // nameTextBox
             // 
             this.nameTextBox.Location = new System.Drawing.Point(121, 17);
-            this.nameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(455, 22);
             this.nameTextBox.TabIndex = 17;
@@ -1178,7 +1197,7 @@
             this.panel2.Controls.Add(this.charactersLabel);
             this.panel2.Controls.Add(this.listBox2);
             this.panel2.Location = new System.Drawing.Point(687, -1);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(522, 669);
             this.panel2.TabIndex = 21;
@@ -1186,7 +1205,7 @@
             // deleteCharacterBtn
             // 
             this.deleteCharacterBtn.Location = new System.Drawing.Point(176, 597);
-            this.deleteCharacterBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.deleteCharacterBtn.Margin = new System.Windows.Forms.Padding(4);
             this.deleteCharacterBtn.Name = "deleteCharacterBtn";
             this.deleteCharacterBtn.Size = new System.Drawing.Size(148, 28);
             this.deleteCharacterBtn.TabIndex = 4;
@@ -1209,7 +1228,7 @@
             this.listBox2.FormattingEnabled = true;
             this.listBox2.ItemHeight = 16;
             this.listBox2.Location = new System.Drawing.Point(33, 54);
-            this.listBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBox2.Margin = new System.Windows.Forms.Padding(4);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(453, 500);
             this.listBox2.TabIndex = 2;
@@ -1217,7 +1236,7 @@
             // addCharacterBtn
             // 
             this.addCharacterBtn.Location = new System.Drawing.Point(265, 597);
-            this.addCharacterBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.addCharacterBtn.Margin = new System.Windows.Forms.Padding(4);
             this.addCharacterBtn.Name = "addCharacterBtn";
             this.addCharacterBtn.Size = new System.Drawing.Size(165, 28);
             this.addCharacterBtn.TabIndex = 20;
@@ -1228,7 +1247,7 @@
             // saveArchetypesBtn
             // 
             this.saveArchetypesBtn.Location = new System.Drawing.Point(1365, 597);
-            this.saveArchetypesBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.saveArchetypesBtn.Margin = new System.Windows.Forms.Padding(4);
             this.saveArchetypesBtn.Name = "saveArchetypesBtn";
             this.saveArchetypesBtn.Size = new System.Drawing.Size(147, 28);
             this.saveArchetypesBtn.TabIndex = 19;
@@ -1241,7 +1260,7 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
             this.listBox1.Location = new System.Drawing.Point(1269, 54);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(332, 500);
             this.listBox1.TabIndex = 18;
@@ -1250,7 +1269,7 @@
             // addArchetypeBtn
             // 
             this.addArchetypeBtn.Location = new System.Drawing.Point(471, 597);
-            this.addArchetypeBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.addArchetypeBtn.Margin = new System.Windows.Forms.Padding(4);
             this.addArchetypeBtn.Name = "addArchetypeBtn";
             this.addArchetypeBtn.Size = new System.Drawing.Size(152, 28);
             this.addArchetypeBtn.TabIndex = 16;
@@ -1260,45 +1279,31 @@
             // 
             // newArchetypeBtn
             // 
+            this.newArchetypeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newArchetypeBtn.ForeColor = System.Drawing.Color.Black;
             this.newArchetypeBtn.Location = new System.Drawing.Point(56, 597);
-            this.newArchetypeBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.newArchetypeBtn.Margin = new System.Windows.Forms.Padding(4);
             this.newArchetypeBtn.Name = "newArchetypeBtn";
-            this.newArchetypeBtn.Size = new System.Drawing.Size(157, 28);
+            this.newArchetypeBtn.Size = new System.Drawing.Size(123, 28);
             this.newArchetypeBtn.TabIndex = 14;
             this.newArchetypeBtn.Text = "New Character";
             this.newArchetypeBtn.UseVisualStyleBackColor = true;
             this.newArchetypeBtn.Click += new System.EventHandler(this.newArchetypeBtn_Click);
             // 
-            // pf
-            // 
-            this.pf.Location = new System.Drawing.Point(121, 180);
-            this.pf.Margin = new System.Windows.Forms.Padding(4);
-            this.pf.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.pf.Minimum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            -2147483648});
-            this.pf.Name = "pf";
-            this.pf.Size = new System.Drawing.Size(52, 22);
-            this.pf.TabIndex = 130;
-            // 
             // ArchetypeCreationControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ArchetypeCreationControl";
             this.Size = new System.Drawing.Size(1636, 688);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pf)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gradoSfida)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carisma)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.saggezza)).EndInit();
@@ -1321,7 +1326,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dadiVitaNumericUpDown)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pf)).EndInit();
             this.ResumeLayout(false);
 
         }

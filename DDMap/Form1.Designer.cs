@@ -109,6 +109,7 @@
             // 
             // archetypeControl
             // 
+            this.archetypeControl.BackColor = System.Drawing.Color.Transparent;
             this.archetypeControl.Location = new System.Drawing.Point(16, 33);
             this.archetypeControl.Margin = new System.Windows.Forms.Padding(5);
             this.archetypeControl.Name = "archetypeControl";
@@ -126,6 +127,7 @@
             // 
             // mapCreationControl
             // 
+            this.mapCreationControl.BackColor = System.Drawing.Color.Transparent;
             this.mapCreationControl.Location = new System.Drawing.Point(3, 33);
             this.mapCreationControl.Margin = new System.Windows.Forms.Padding(5);
             this.mapCreationControl.Name = "mapCreationControl";

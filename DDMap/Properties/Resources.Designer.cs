@@ -61,11 +61,32 @@ namespace DDMap.Properties {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a .
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static string Archetypes {
+        internal static System.Drawing.Bitmap Button {
             get {
-                return ResourceManager.GetString("Archetypes", resourceCulture);
+                object obj = ResourceManager.GetObject("Button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ButtonClicked {
+            get {
+                object obj = ResourceManager.GetObject("ButtonClicked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ButtonHov {
+            get {
+                object obj = ResourceManager.GetObject("ButtonHov", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

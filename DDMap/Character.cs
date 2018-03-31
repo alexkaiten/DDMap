@@ -58,38 +58,7 @@ namespace DDMap
         }
 
         public Point Position;
-        private DDSize selectedItem1;
-        private string text1;
-        private string text2;
-        private string text3;
-        private Dadi selectedItem2;
-        private Alignment selectedItem3;
-        private int value1;
-        private int value2;
-        private int value3;
-        private int value4;
-        private int value5;
-        private int value6;
-        private int value7;
-        private string text4;
-        private string text5;
-        private string text6;
-        private string text7;
-        private string text8;
-        private string text9;
-        private int value8;
-        private int value9;
-        private int value10;
-        private int value11;
-        private int value12;
-        private int value13;
-        private int value14;
-        private int value15;
-        private int value16;
-        private int value17;
-        private int value18;
-        private int value19;
-        private int value20;
+        
 
         public Character()
         {
