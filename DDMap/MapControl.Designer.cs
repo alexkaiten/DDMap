@@ -65,6 +65,7 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(219, 276);
             this.listBox1.TabIndex = 0;
+            this.listBox1.GiveFeedback += new System.Windows.Forms.GiveFeedbackEventHandler(this.listBox1_GiveFeedback);
             // 
             // mapBox
             // 
@@ -75,6 +76,8 @@
             this.mapBox.Name = "mapBox";
             this.mapBox.Size = new System.Drawing.Size(1066, 664);
             this.mapBox.TabIndex = 3;
+            this.mapBox.DragOver += new System.Windows.Forms.DragEventHandler(this.mapBox_DragOver);
+            this.mapBox.GiveFeedback += new System.Windows.Forms.GiveFeedbackEventHandler(this.mapBox_GiveFeedback);
             // 
             // MapControl
             // 

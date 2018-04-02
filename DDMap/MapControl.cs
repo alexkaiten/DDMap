@@ -22,12 +22,14 @@ namespace DDMap
         List<Character> characterList = new List<Character>();
         ToolTip tip = new ToolTip();
         public Bitmap bmap;
+       
+
+        Cursor cur;
 
         public MapControl()
         {
             InitializeComponent();
             mapBox.DragEnter += map_DragEnter;
-            mapBox.DragOver += map_DragOver;
             mapBox.DragDrop += map_DragDrop;
             listBox1.DisplayMember = "CharacterName";
             listBox1.MouseDown += listBox1_MouseDown;
@@ -38,6 +40,18 @@ namespace DDMap
         void listBox1_MouseDown(object sender, MouseEventArgs e)
         {
             mDownPos = e.Location;
+            int index = listBox1.IndexFromPoint(e.Location);
+            Character draggedChar = (Character)listBox1.Items[index];
+            int charHeight = Convert.ToInt32(dataMap.CellSize * Common.Taglie[draggedChar.Size].i);
+            int charWidth = Convert.ToInt32(dataMap.CellSize * Common.Taglie[draggedChar.Size].j);
+            Bitmap bmp = new Bitmap(charWidth, charHeight);
+            Graphics g = Graphics.FromImage(bmp);
+            g.FillRectangle(new SolidBrush(Color.Red), new Rectangle(Point.Empty, bmp.Size));
+            //optionally define a transparent color
+            bmp.MakeTransparent(Color.White);
+
+            cur = new Cursor(bmp.GetHicon());
+
         }
         void listBox1_MouseMove(object sender, MouseEventArgs e)
         {
@@ -46,12 +60,25 @@ namespace DDMap
             if (index < 0) return;
             if (Math.Abs(e.X - mDownPos.X) >= SystemInformation.DragSize.Width ||
                 Math.Abs(e.Y - mDownPos.Y) >= SystemInformation.DragSize.Height)
-                DoDragDrop(new DragObject(listBox1, listBox1.Items[index]), DragDropEffects.All);
+                listBox1.DoDragDrop(new DragObject(listBox1, listBox1.Items[index]), DragDropEffects.All);
+  
         }
 
         void char_MouseDown(object sender, MouseEventArgs e)
         {
+            Panel b = (Panel)(sender);
             mDownPos = e.Location;
+            Character c = dataMap.Characters.Where(t => t.CurrentPanel != null && t.CurrentPanel.Location == b.Location).FirstOrDefault();
+            Character draggedChar = c;
+            int charHeight = Convert.ToInt32(dataMap.CellSize * Common.Taglie[draggedChar.Size].i);
+            int charWidth = Convert.ToInt32(dataMap.CellSize * Common.Taglie[draggedChar.Size].j);
+            Bitmap bmp = new Bitmap(charWidth, charHeight);
+            Graphics g = Graphics.FromImage(bmp);
+            g.FillRectangle(new SolidBrush(Color.Red), new Rectangle(Point.Empty, bmp.Size));
+            //optionally define a transparent color
+            bmp.MakeTransparent(Color.White);
+
+            cur = new Cursor(bmp.GetHicon());
         }
         void char_MouseMove(object sender, MouseEventArgs e)
         {
@@ -62,41 +89,14 @@ namespace DDMap
                 if (e.Button != MouseButtons.Left) return;
                 if (Math.Abs(e.X - mDownPos.X) >= SystemInformation.DragSize.Width ||
                     Math.Abs(e.Y - mDownPos.Y) >= SystemInformation.DragSize.Height)
-                    DoDragDrop(new DragObject(listBox1, c), DragDropEffects.All);
+                    mapBox.DoDragDrop(new DragObject(listBox1, c), DragDropEffects.All);
             }
             catch { }
         }
 
         private void map_DragEnter(object sender, DragEventArgs e)
         {
-            try
-            {
-                Point pt = mapBox.PointToClient(new Point(e.X, e.Y));
-                PictureBox p = (PictureBox)(mapBox.GetChildAtPoint(pt));
-                highlightPicture(p);
-                currentPictureBox = p;
-            }
-            catch { }
             e.Effect = DragDropEffects.All;
-        }
-
-
-
-        private void map_DragOver(object sender, DragEventArgs e)
-        {
-            try
-            {
-                Point pt = mapBox.PointToClient(new Point(e.X, e.Y));
-                PictureBox p = (PictureBox)(mapBox.GetChildAtPoint(pt));
-                if (!p.Equals(currentPictureBox))
-                {
-                    previousPictureBox = currentPictureBox;
-                    highlightPicture(p);
-                    currentPictureBox = p;
-                }
-            }
-            catch { }
-
         }
 
         private void map_DragDrop(object sender, DragEventArgs e)
@@ -104,12 +104,9 @@ namespace DDMap
             try
             {
                 Point pt = mapBox.PointToClient(new Point(e.X, e.Y));
-                PictureBox p = (PictureBox)(mapBox.GetChildAtPoint(pt));
-                restoreCurrentPicture();
                 DragObject obj = (DragObject)e.Data.GetData(typeof(DragObject));
                 Character c = (Character)obj.item;
                 InsertCharacter(c, pt);
-
             }
             catch { }
 
@@ -161,23 +158,24 @@ namespace DDMap
             {
                 Size s = new Size(tileWidth, tileHeight);
                 Rectangle destRect = new Rectangle(Point.Empty, s);
-                for (int row = 0; row < tileRows; row++)
-                    for (int col = 0; col < tileCols; col++)
-                    {
-                        PictureBox p = new PictureBox();
-                        p.BorderStyle = BorderStyle.FixedSingle;
-                        p.Size = s;
-                        Point loc = new Point(tileWidth * col, tileHeight * row);
-                        Rectangle srcRect = new Rectangle(loc, s);
-                        Bitmap tile = new Bitmap(tileWidth, tileHeight);
-                        Graphics G = Graphics.FromImage(tile);
-                        G.DrawImage(sourceBmp, destRect, srcRect, GraphicsUnit.Pixel);
-                        p.Image = tile;
-                        p.Location = loc;
-                        p.Tag = loc;
-                        p.Name = String.Format("Col={0:00}-Row={1:00}", col, row);
-                        mapBox.Controls.Add(p);
-                    }
+                //for (int row = 0; row < tileRows; row++)
+                //    for (int col = 0; col < tileCols; col++)
+                //    {
+                //        PictureBox p = new PictureBox();
+                //        p.BorderStyle = BorderStyle.FixedSingle;
+                //        p.Size = s;
+                //        Point loc = new Point(tileWidth * col, tileHeight * row);
+                //        Rectangle srcRect = new Rectangle(loc, s);
+                //        Bitmap tile = new Bitmap(tileWidth, tileHeight);
+                //        Graphics G = Graphics.FromImage(tile);
+                //        G.DrawImage(sourceBmp, destRect, srcRect, GraphicsUnit.Pixel);
+                //        p.Image = tile;
+                //        p.Location = loc;
+                //        p.Tag = loc;
+                //        p.Name = String.Format("Col={0:00}-Row={1:00}", col, row);
+                //        mapBox.Controls.Add(p);
+                //    }
+                mapBox.BackgroundImage = bmap;
             }
             foreach (Character c in dataMap.Characters)
             {
@@ -224,19 +222,6 @@ namespace DDMap
             return (Bitmap)bmap.Clone();
         }
 
-
-
-        //private void fillListBox()
-        //{
-        //    Character c1 = new Character("Test1", 100, "goblin", Common.DDSize.Media);
-        //    Character c2 = new Character("Test2", 150, "goblin", Common.DDSize.Colossale);
-        //    dataMap.Characters.Add(c1);
-        //    dataMap.Characters.Add(c2);
-        //    foreach (Character c in dataMap.Characters)
-        //    {
-        //        listBox1.Items.Add(c);
-        //    }
-        //}
 
         private void InsertCharacter(Character c, Point position)
         {
@@ -298,8 +283,6 @@ namespace DDMap
         private void ShowMyDialogBox(object sender)
         {
             Panel b = (Panel)(sender);
-            //PictureBox p = (PictureBox)b.Parent;
-            //MapSquare mapSquare = dataMap.Squares[p.Name];
             using (DialogForm dialog = new DialogForm())
             {
                 try
@@ -355,6 +338,23 @@ namespace DDMap
         public void UpdateCharacterList()
         {
             fillCharactersList();
+        }
+
+        private void mapBox_GiveFeedback(object sender, GiveFeedbackEventArgs e)
+        {
+            e.UseDefaultCursors = false;
+            Cursor.Current = cur;
+        }
+
+        private void mapBox_DragOver(object sender, DragEventArgs e)
+        {
+            Cursor.Current = cur;
+        }
+
+        private void listBox1_GiveFeedback(object sender, GiveFeedbackEventArgs e)
+        {
+            e.UseDefaultCursors = false;
+            Cursor.Current = cur;
         }
     }
 }
