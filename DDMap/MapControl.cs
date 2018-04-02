@@ -346,15 +346,31 @@ namespace DDMap
             Cursor.Current = cur;
         }
 
-        private void mapBox_DragOver(object sender, DragEventArgs e)
-        {
-            Cursor.Current = cur;
-        }
-
         private void listBox1_GiveFeedback(object sender, GiveFeedbackEventArgs e)
         {
             e.UseDefaultCursors = false;
             Cursor.Current = cur;
+        }
+
+        private void mapBox_Paint(object sender, PaintEventArgs e)
+        {
+            int cellSize = dataMap.CellSize;
+            if (cellSize > -1)
+            {
+                using (Graphics g = e.Graphics)
+                {
+                    Pen p = new Pen(Color.Black, 2);
+
+                    for (int y = 0; y < mapBox.Height; y += cellSize)
+                    {
+                        g.DrawLine(p, 0, y, mapBox.Width, y);
+                    }
+                    for (int x = 0; x < mapBox.Width; x += cellSize)
+                    {
+                        g.DrawLine(p, x, 0, x, mapBox.Height);
+                    }
+                }
+            }
         }
     }
 }

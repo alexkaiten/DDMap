@@ -76,8 +76,8 @@
             this.mapBox.Name = "mapBox";
             this.mapBox.Size = new System.Drawing.Size(1066, 664);
             this.mapBox.TabIndex = 3;
-            this.mapBox.DragOver += new System.Windows.Forms.DragEventHandler(this.mapBox_DragOver);
             this.mapBox.GiveFeedback += new System.Windows.Forms.GiveFeedbackEventHandler(this.mapBox_GiveFeedback);
+            this.mapBox.Paint += new System.Windows.Forms.PaintEventHandler(this.mapBox_Paint);
             // 
             // MapControl
             // 
