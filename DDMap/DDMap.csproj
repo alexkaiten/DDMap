@@ -54,6 +54,7 @@
     </Compile>
     <Compile Include="Character.cs" />
     <Compile Include="Common.cs" />
+    <Compile Include="Couple.cs" />
     <Compile Include="DataMap.cs" />
     <Compile Include="DialogForm.cs">
       <SubType>Form</SubType>
@@ -152,6 +153,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ButtonHov1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kJ9Ydn9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\D&amp;dImages\ColorSlider\ColorSlider\ColorSlider.csproj">
+      <Project>{16e224dc-7ff0-4908-8318-d6a3ac2e797a}</Project>
+      <Name>ColorSlider</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

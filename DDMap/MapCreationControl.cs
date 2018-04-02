@@ -19,6 +19,9 @@ namespace DDMap
         public MapCreationControl()
         {
             InitializeComponent();
+            this.loadImageBtn.Text = "Load Image";
+            this.cancelBtn.Text = "Cancel";
+            this.saveBtn.Text = "Save";
         }
 
         private void loadImageBtn_Click(object sender, EventArgs e)
@@ -121,12 +124,6 @@ namespace DDMap
 
             return new Bitmap(thumbnail);
         }
-
-        private void trackBar1_Scroll(object sender, EventArgs e)
-        {
-            mapBox.Invalidate();
-        }
-
         
 
         private void mapBox_Paint(object sender, PaintEventArgs e)
@@ -158,8 +155,30 @@ namespace DDMap
             {
                 MessageBox.Show("Please insert a name and an image for the map.");
             }
+            if (mapNameTextBox.Text != string.Empty && bmap != null)
+            {
+                resetFields();
+            }
+
+        }
+
+        private void resetFields()
+        {
             trackBar1.Value = 15;
             mapBox.BackgroundImage = null;
+            bmap = null;
+            mapNameTextBox.Text = string.Empty;
+        }
+
+        private void trackBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+            mapBox.Invalidate();
+        }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            resetFields();
+            mapBox.Invalidate();
         }
     }
 }

@@ -202,7 +202,6 @@ namespace DDMap
         private Bitmap GenerateFilteredImage(Bitmap bmp, Color color)
         {
             Bitmap bmap = (Bitmap)bmp.Clone();
-            Color c;
             for (int i = 0; i < bmap.Width; i++)
             {
                 for (int j = 0; j < bmap.Height; j++)
@@ -227,17 +226,17 @@ namespace DDMap
 
 
 
-        private void fillListBox()
-        {
-            Character c1 = new Character("Test1", 100, "goblin", Common.DDSize.Media);
-            Character c2 = new Character("Test2", 150, "goblin", Common.DDSize.Colossale);
-            dataMap.Characters.Add(c1);
-            dataMap.Characters.Add(c2);
-            foreach (Character c in dataMap.Characters)
-            {
-                listBox1.Items.Add(c);
-            }
-        }
+        //private void fillListBox()
+        //{
+        //    Character c1 = new Character("Test1", 100, "goblin", Common.DDSize.Media);
+        //    Character c2 = new Character("Test2", 150, "goblin", Common.DDSize.Colossale);
+        //    dataMap.Characters.Add(c1);
+        //    dataMap.Characters.Add(c2);
+        //    foreach (Character c in dataMap.Characters)
+        //    {
+        //        listBox1.Items.Add(c);
+        //    }
+        //}
 
         private void InsertCharacter(Character c, Point position)
         {
@@ -245,7 +244,9 @@ namespace DDMap
             //p.Image = DrawCharacter(p, c, position);
             Panel b = new Panel();
             //b.Text = " ";
-            b.Size = new Size(10, 10);
+            int charHeight = Convert.ToInt32(dataMap.CellSize * Common.Taglie[c.Size].i);
+            int charWidth = Convert.ToInt32(dataMap.CellSize * Common.Taglie[c.Size].j);
+            b.Size = new Size(charWidth, charHeight);
             Point center = new Point(position.X - (b.Size.Height / 2), position.Y - (b.Size.Width / 2));
             b.Location = center;
             b.BackColor = c.Colour;
@@ -270,8 +271,10 @@ namespace DDMap
             //MapSquare mapSquare = dataMap.Squares[p.Name];
             //p.Image = DrawCharacter(p, c, position);
             Panel b = new Panel();
-            //b.Text = " ";
-            b.Size = new Size(10, 10);
+
+            int charHeight = Convert.ToInt32(dataMap.CellSize * Common.Taglie[c.Size].i);
+            int charWidth = Convert.ToInt32(dataMap.CellSize * Common.Taglie[c.Size].j);
+            b.Size = new Size(charWidth, charHeight);
             b.Location = position;
             b.BackColor = c.Colour;
             b.MouseHover += ShowTooltip;
