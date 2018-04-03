@@ -76,6 +76,12 @@
     </Compile>
     <Compile Include="MapSquare.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="ProjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectForm.designer.cs">
+      <DependentUpon>ProjectForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MapControl.cs">
       <SubType>UserControl</SubType>
@@ -103,6 +109,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MapControl.resx">
       <DependentUpon>MapControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectForm.resx">
+      <DependentUpon>ProjectForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -161,7 +170,7 @@
     <None Include="Resources\kJ9Ydn9.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\D&amp;dImages\ColorSlider\ColorSlider\ColorSlider.csproj">
+    <ProjectReference Include="..\ColorSlider\ColorSlider\ColorSlider.csproj">
       <Project>{16e224dc-7ff0-4908-8318-d6a3ac2e797a}</Project>
       <Name>ColorSlider</Name>
     </ProjectReference>

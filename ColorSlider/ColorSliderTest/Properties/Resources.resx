@@ -112,48 +112,13 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="projectBtn.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        /9j/4AAQSkZJRgABAQEAYABgAAD/4QBARXhpZgAATU0AKgAAAAgAAQExAAIAAAAdAAAAGgAAAABBZG9i
-        ZSBQaG90b3Nob3AgQ0MgKFdpbmRvd3MpAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEB
-        AQEBAQEBAQICAQECAQEBAgICAgICAgICAQICAgICAgICAgL/2wBDAQEBAQEBAQEBAQECAQEBAgICAgIC
-        AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgL/wAARCAAXAFkDASIAAhEB
-        AxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQID
-        AAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdI
-        SUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5
-        usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAA
-        AAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHB
-        CSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3
-        eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk
-        5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD8V/2fPjZHeeEvDHhq0+waZYaNoGneeFVrS0s4YIDa
-        JNHFaMqXGoTNHEVwWO5QZRtBavtbR/2jvDXhy2NpbalJdSFUE0lzPuZniLEYjjbZEA8rcBd2AvpX8y3w
-        9+NV/oFk1qt2YIrq3ihZxJ5bh7NnQxuEz5auJFwPevQX+Md/dHd9skK7SVIlLA5A/hL+5796+CxOWSdW
-        pdyg27/luuv3n7Tl3Fq+q0XUadeEVFNL7Ktbe1tPL/Jf0X6j+1rokFuJRcwKHIBVZHUEFGLZ2yDKgDGK
-        8z1H9sTS4VS5kuIjI/zJG8jOiK+0x7U3ZB28g4xz0zX4I33xd1OeALJqEz4wTgqzDG0NhD33H1421wd1
-        8WL4N5c1zM0allEpGT5asVBYI5I6c8HO7Gazw+T1OVc8nUk766267f8AB/A2r8aOMtHaCWuyW6/4PQ/o
-        JT9t+2MxVbqMhHKAJK5JxhVwgAJG7gHHb8ayNZ/btSKcQ+Yqozo0mZpCWUB3+6QdhLL2yPlr8DoPiU7N
-        uS/ALA4dWc/eHysSGG0Y/n+FYmqfEC7vmkCXJmePy8yI7iVGj2oWUNIT0xjnktXRSyaUpvSbVtFrp9+/
-        4o4anGlVxtTqRu33Ttt27ddj91Lz9vy7STcJTKpHyxozZjAOw79wPzbcHC442/So1/b+vim5px8gcAyT
-        7HKqDuwjFtx5PT+9X4Gp401UTMs7HJw5dLsQPGDyhaKRgRnHPJxWl/wmlzJES2fMydjG/iCgSAhiy+Z8
-        +dp59q3/ALEbcW6bVn3sunS5yf68Yh6e1V3sknvp2v8A1of0UeA/25rbWFIu54Ay7OGLZwwwAATkc/n+
-        NetX/wC0noHim0S0uL82s6xMkc0DI7YkIB3RzZEoIb6rt4r+ajQfGd1ZNG6Xr7wiZHn5KhSz4OHOTvz3
-        OK9Dg+MOo2aEtfvGmANzNhwAflClnxtwP88VyVspvU5HN8qa0T66ejPXwvGU/ZqNWMZvu7JNaX266H6b
-        ftK/HqGHwX4q8HX8el3lnqmkXjp5UBuLSSKaCZV1O3S4hb7Pew3EcbMobeJEV4scGvyB/wCFm+Cv+gqf
-        /BRqH/xunePPi3qHio29j9o8y1kjNgJXZXYrcSxlnCt/rYlQMeD3ryv/AIVta/8AQaH/AIBQ/wCNenl2
-        ApUITVWc4c1rWbd7N36P+vw+Tz3iGpjcTCVClGapprW2iumlo15/8Oc/awaGd6mw1ldoUSyRXlht2vHH
-        KVfIDGIvg4UZA44qWKHUIjKkVtaqFbcFN5eITGwPlbvLfCvsAzgEY96KK+pxEIKo0opJJPv187nxco++
-        knZJK1rf5DZ7nUPMAa1tshdqg3l8xCnLcsZuADjgVIy6k0eDFZRmQqWkiluPM4x5YyW6Ee9FFEYxUISU
-        Em15/wCY4LmgpOTba/yFKaiAQsjbxkEfaZME8dG7Ac/XFSR6fq8xIEs2N3Kx3zDgnPVyMYY+/X0xgorJ
-        Ta6L7iIq6s29CafRNWt5GF0kjsYwVLXkUoCkj5WBOMA9gO/FVWsNVXbiOMLllG+5OCcfLnYcgdOlFFdE
-        bSw/tHFczXnb7L7+bOiVGChzK92319P8ydINWVnKW1ljGRm6u1KnC90fkZ7frUNxZ6jcFRc20TqsiuyQ
-        6hd5Kvz+7WWXaHwVznj09KKKyoxi5axWi/yMrPbmbT/4ALZaZHJCbfTdVluIpEkiNzfWW1JlkBgMj7nL
-        wBwflAyR15rovt/jH00//vmD/wCN0UVraKs+RP1+RtBe7va3p5eR/9k=
-</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Na rybkach" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Na rybkach.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

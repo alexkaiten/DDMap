@@ -22,7 +22,7 @@ namespace DDMap
         List<Character> characterList = new List<Character>();
         ToolTip tip = new ToolTip();
         public Bitmap bmap;
-       
+        ProjectForm secondaryForm = null;
 
         Cursor cur;
 
@@ -247,6 +247,8 @@ namespace DDMap
             mapBox.Controls.Add(b);
             b.BringToFront();
             c.CurrentPanel = b;
+            updateSecondaryScreen();
+            
         }
 
         
@@ -270,6 +272,7 @@ namespace DDMap
             c.CurrentPanel = b;
             mapBox.Controls.Add(b);
             b.BringToFront();
+            updateSecondaryScreen();
         }
 
         private void char_MouseClick(object sender, MouseEventArgs e)
@@ -370,6 +373,43 @@ namespace DDMap
                         g.DrawLine(p, x, 0, x, mapBox.Height);
                     }
                 }
+            }
+        }
+
+        private void projectBtn_Click(object sender, EventArgs e)
+        {
+            Screen primaryFormScreen = Screen.FromControl(this.Parent);
+            //Use this if you are looking for secondary screen that is not primary
+            Screen secondaryFormScreen = Screen.AllScreens.FirstOrDefault(s => !s.Primary) ?? primaryFormScreen;
+            ////Use this if you are looking for screen that is not being used by specific form
+            //Screen secondaryFormScreen = Screen.AllScreens.FirstOrDefault(s => !s.Equals(primaryFormScreen)) ?? primaryFormScreen;
+            //Putting the form on the other screen
+            if (!primaryFormScreen.Equals(secondaryFormScreen))
+            {
+                secondaryForm = new ProjectForm();
+                //Putting the form on the other screen
+                secondaryForm.Left = secondaryFormScreen.Bounds.Width;
+                secondaryForm.Top = secondaryFormScreen.Bounds.Height;
+                //Recommended to use, You can change it back later to the settings you wish
+                secondaryForm.StartPosition = FormStartPosition.Manual;
+                secondaryForm.Location = secondaryFormScreen.Bounds.Location;
+                Point p = new Point(secondaryFormScreen.Bounds.Location.X, secondaryFormScreen.Bounds.Location.Y);
+                secondaryForm.Location = p;
+                secondaryForm.Show();
+                updateSecondaryScreen();
+            }
+        }
+
+        private void updateSecondaryScreen()
+        {
+            if (secondaryForm != null)
+            {
+                Bitmap b = new Bitmap(mapBox.Width, mapBox.Height);
+                using (Graphics graphics = Graphics.FromImage(b))
+                {
+                    graphics.CopyFromScreen(this.PointToScreen(mapBox.Location), new Point(0, 0), mapBox.Size);
+                }
+                secondaryForm.Update(b);
             }
         }
     }
