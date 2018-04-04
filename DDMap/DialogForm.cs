@@ -90,5 +90,11 @@ namespace DDMap
             this.DialogResult = DialogResult.Yes;
             this.Close();
         }
+
+        private void deleteCharacterBtn_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.No;
+            this.Close();
+        }
     }
 }

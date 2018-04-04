@@ -42,8 +42,8 @@ namespace DDMap
             mDownPos = e.Location;
             int index = listBox1.IndexFromPoint(e.Location);
             Character draggedChar = (Character)listBox1.Items[index];
-            int charHeight = Convert.ToInt32(dataMap.CellSize * Common.Taglie[draggedChar.Size].i);
-            int charWidth = Convert.ToInt32(dataMap.CellSize * Common.Taglie[draggedChar.Size].j);
+            int charWidth = Convert.ToInt32(dataMap.CellSize * draggedChar.GetDimensions().i);
+            int charHeight = Convert.ToInt32(dataMap.CellSize * draggedChar.GetDimensions().j);
             Bitmap bmp = new Bitmap(charWidth, charHeight);
             Graphics g = Graphics.FromImage(bmp);
             g.FillRectangle(new SolidBrush(Color.Red), new Rectangle(Point.Empty, bmp.Size));
@@ -70,8 +70,8 @@ namespace DDMap
             mDownPos = e.Location;
             Character c = dataMap.Characters.Where(t => t.CurrentPanel != null && t.CurrentPanel.Location == b.Location).FirstOrDefault();
             Character draggedChar = c;
-            int charHeight = Convert.ToInt32(dataMap.CellSize * Common.Taglie[draggedChar.Size].i);
-            int charWidth = Convert.ToInt32(dataMap.CellSize * Common.Taglie[draggedChar.Size].j);
+            int charHeight = Convert.ToInt32(dataMap.CellSize * draggedChar.GetDimensions().j);
+            int charWidth = Convert.ToInt32(dataMap.CellSize * draggedChar.GetDimensions().i);
             Bitmap bmp = new Bitmap(charWidth, charHeight);
             Graphics g = Graphics.FromImage(bmp);
             g.FillRectangle(new SolidBrush(Color.Red), new Rectangle(Point.Empty, bmp.Size));
@@ -229,10 +229,10 @@ namespace DDMap
             //p.Image = DrawCharacter(p, c, position);
             Panel b = new Panel();
             //b.Text = " ";
-            int charHeight = Convert.ToInt32(dataMap.CellSize * Common.Taglie[c.Size].i);
-            int charWidth = Convert.ToInt32(dataMap.CellSize * Common.Taglie[c.Size].j);
+            int charHeight = Convert.ToInt32(dataMap.CellSize * c.GetDimensions().j);
+            int charWidth = Convert.ToInt32(dataMap.CellSize * c.GetDimensions().i);
             b.Size = new Size(charWidth, charHeight);
-            Point center = new Point(position.X - (b.Size.Height / 2), position.Y - (b.Size.Width / 2));
+            Point center = new Point(position.X - (b.Size.Width / 2), position.Y - (b.Size.Height / 2));
             b.Location = center;
             b.BackColor = c.Colour;
             b.MouseHover += ShowTooltip;
@@ -259,8 +259,8 @@ namespace DDMap
             //p.Image = DrawCharacter(p, c, position);
             Panel b = new Panel();
 
-            int charHeight = Convert.ToInt32(dataMap.CellSize * Common.Taglie[c.Size].i);
-            int charWidth = Convert.ToInt32(dataMap.CellSize * Common.Taglie[c.Size].j);
+            int charHeight = Convert.ToInt32(dataMap.CellSize * c.GetDimensions().j);
+            int charWidth = Convert.ToInt32(dataMap.CellSize * c.GetDimensions().i);
             b.Size = new Size(charWidth, charHeight);
             b.Location = position;
             b.BackColor = c.Colour;
@@ -294,14 +294,20 @@ namespace DDMap
 
 
                     dialog.SetCharacter(c);
-                    if (dialog.ShowDialog(this) == DialogResult.Yes)
+                    DialogResult res = dialog.ShowDialog(this);
+                    if (res == DialogResult.Yes)
                     {
                         Character modifiedCharacter = dialog.GetModifiedCharacter();
                         c.CopyCharacter(modifiedCharacter);
                     }
+                    else if (res == DialogResult.No)
+                    {
+                        mapBox.Controls.Remove(c.CurrentPanel);
+                        c.CurrentPanel = null;
+                    }
                     else
                     {
-                        //MessageBox.Show("Cancelled");
+
                     }
 
                 }

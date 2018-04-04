@@ -10,12 +10,12 @@ using static DDMap.Common;
 namespace DDMap
 {
     [Serializable]
-    public class Character:Archetype
+    public class Character : Archetype
     {
         public String CharacterName { get; set; }
 
         [NonSerialized]
-        private Panel _currentPanel; 
+        private Panel _currentPanel;
         public Panel CurrentPanel
         {
             get
@@ -25,11 +25,15 @@ namespace DDMap
             set
             {
                 _currentPanel = value;
-                if(value != null)
+                if (value != null)
                 {
                     Position = value.Location;
                 }
-                  
+                else
+                {
+                    Position = new Point(-1, -1);
+                }
+
             }
         }
 
@@ -57,8 +61,15 @@ namespace DDMap
             }
         }
 
+        public bool Rotated
+        {
+            get; set;
+        }
+
+       
+
         public Point Position;
-        
+
 
         public Character()
         {
@@ -69,9 +80,10 @@ namespace DDMap
             CurrentPanel = null;
             Position = new Point(-1, -1);
             Race = string.Empty;
+            Rotated = false;
         }
 
-        
+
 
         public Character(string name, int pf, string race, DDSize size, string info = null)
         {
@@ -82,6 +94,7 @@ namespace DDMap
             CurrentPanel = null;
             Position = new Point(-1, -1);
             Race = race;
+            Rotated = false;
         }
 
         public Character(string name, string shortName, string race, int pF, DDSize size, string info, Color colour,
@@ -89,7 +102,7 @@ namespace DDMap
             int cATaglia, int cADestrezza, int cAScudo, int cAArmatura, string faccia_Portata, string clima_Terreno, string talenti,
             string qualitaSpeciali, string attacchiSpeciali, string loot, int gradoSfida, int carisma, int saggezza, int intelligenza,
             int costituzione, int destrezza, int forza, int tSVolonta, int tSRiflessi, int tSTempra, int velocita, int iniziativa,
-            int numeroDadiVita) : this(name, pF, race, size, info)
+            int numeroDadiVita, Couple<double> dimensions) : this(name, pF, race, size, info)
         {
             CharacterName = String.IsNullOrEmpty(shortName) ? name : shortName;
             Colour = colour;
@@ -123,6 +136,8 @@ namespace DDMap
             Velocita = velocita;
             Iniziativa = iniziativa;
             NumeroDadiVita = numeroDadiVita;
+            Rotated = false;
+            Dimensions = dimensions;
         }
 
         public Character(string name, int pf, string info = null)
@@ -130,6 +145,7 @@ namespace DDMap
             Name = name;
             PF = pf;
             Info = info;
+            Rotated = false;
         }
 
         public Character(string characterName, int pF, DDSize size, string info,
@@ -172,6 +188,7 @@ namespace DDMap
             Velocita = velocita;
             Iniziativa = iniziativa;
             NumeroDadiVita = numeroDadiVita;
+            Rotated = false;
         }
 
         public override string ToString()
@@ -213,6 +230,28 @@ namespace DDMap
             Velocita = c.Velocita;
             Iniziativa = c.Iniziativa;
             NumeroDadiVita = c.NumeroDadiVita;
+        }
+
+        public Couple<double> GetDimensions()
+        {
+            if (this.Size.Equals(Common.DDSize.Grande) ||
+                this.Size.Equals(Common.DDSize.Enorme) ||
+                this.Size.Equals(Common.DDSize.Colossale) ||
+                this.Size.Equals(Common.DDSize.Mastodontica))
+            {
+                if (!Rotated)
+                {
+                    return Dimensions;
+                }
+                else
+                {
+                    return new Couple<double>(Dimensions.j, Dimensions.i);
+                }
+            }
+            else
+            {
+                return Common.Taglie[Size];
+            }
         }
          
     }

@@ -58,6 +58,7 @@ namespace DDMap
         public int Velocita { get; set; }
         public int Iniziativa { get; set; }
         public int NumeroDadiVita { get; set; }
+        public Couple<double> Dimensions { get; set; }
 
         public Archetype()
         {
@@ -84,7 +85,7 @@ namespace DDMap
             int cATaglia, int cADestrezza, int cAScudo, int cAArmatura, string faccia_Portata, string clima_Terreno, string talenti, 
             string qualitaSpeciali, string attacchiSpeciali, string loot, int gradoSfida, int carisma, int saggezza, int intelligenza, 
             int costituzione, int destrezza, int forza, int tSVolonta, int tSRiflessi, int tSTempra, int velocita, int iniziativa, 
-            int numeroDadiVita) : this(name, shortName, race, pF, size, info)
+            int numeroDadiVita, Couple<double> dimensions) : this(name, shortName, race, pF, size, info)
         {
             Colour = colour;
             Danni = danni;
@@ -117,6 +118,7 @@ namespace DDMap
             Velocita = velocita;
             Iniziativa = iniziativa;
             NumeroDadiVita = numeroDadiVita;
+            Dimensions = dimensions;
         }
 
         public override string ToString()

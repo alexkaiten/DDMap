@@ -99,7 +99,7 @@ namespace DDMap
                     colorPanel.BackColor, danniTextBox.Text, attacchiTextBox.Text, (Common.Dadi)dadiVitaDDL.SelectedItem, (Common.Alignment)AlignmentDDL.SelectedItem, (int)temp.Value, (int)vari.Value, (int)naturale.Value,
                     (int)taglia.Value, (int)destrezza.Value, (int)scudo.Value, (int)armatura.Value, facciaPortataTextBox.Text, climaTerrenoTextBox.Text, talentiTextBox.Text, qualitaSpecialiTextBox.Text,
                     attacchiSpecialiTextBox.Text, lootTextBox.Text, (int)gradoSfida.Value, (int)carisma.Value, (int)saggezza.Value, (int)intelligenza.Value, (int)costituzione.Value, (int)destrezza.Value,
-                    (int)forza.Value, (int)volonta.Value, (int)riflessi.Value, (int)tempra.Value, (int)velocita.Value, (int)iniziativa.Value, (int)dadiVitaNumericUpDown.Value);
+                    (int)forza.Value, (int)volonta.Value, (int)riflessi.Value, (int)tempra.Value, (int)velocita.Value, (int)iniziativa.Value, (int)dadiVitaNumericUpDown.Value, new Couple<double>((double)dimensionWidth.Value, (double)dimensionHeight.Value));
 
                 Archetype a = archetypes.Where(t => t.Name.Equals(arch.Name)).FirstOrDefault();
                 if (a != null)
@@ -166,6 +166,24 @@ namespace DDMap
             this.iniziativa.Value = a.Iniziativa;
             this.dadiVitaNumericUpDown.Value = a.NumeroDadiVita;
             this.colorPanel.BackColor = a.Colour;
+            if (a.Size.Equals(Common.DDSize.Grande) ||
+                a.Size.Equals(Common.DDSize.Enorme) ||
+                a.Size.Equals(Common.DDSize.Colossale) ||
+                a.Size.Equals(Common.DDSize.Mastodontica))
+            {
+                dimensionWidth.Enabled = true;
+                dimensionHeight.Enabled = true;
+                dimensionWidth.Value = (decimal)a.Dimensions.i;
+                dimensionHeight.Value = (decimal)a.Dimensions.j;
+                
+            }
+            else
+            {
+                dimensionWidth.Value = 0;
+                dimensionHeight.Value = 0;
+                dimensionWidth.Enabled = false;
+                dimensionHeight.Enabled = false;
+            }
         }
 
         private void saveArchetypesBtn_Click(object sender, EventArgs e)
@@ -218,7 +236,7 @@ namespace DDMap
                     colorPanel.BackColor, danniTextBox.Text, attacchiTextBox.Text, (Common.Dadi)dadiVitaDDL.SelectedItem, (Common.Alignment)AlignmentDDL.SelectedItem, (int)temp.Value, (int)vari.Value, (int)naturale.Value,
                     (int)taglia.Value, (int)destrezza.Value, (int)scudo.Value, (int)armatura.Value, facciaPortataTextBox.Text, climaTerrenoTextBox.Text, talentiTextBox.Text, qualitaSpecialiTextBox.Text,
                     attacchiSpecialiTextBox.Text, lootTextBox.Text, (int)gradoSfida.Value, (int)carisma.Value, (int)saggezza.Value, (int)intelligenza.Value, (int)costituzione.Value, (int)destrezza.Value,
-                    (int)forza.Value, (int)volonta.Value, (int)riflessi.Value, (int)tempra.Value, (int)velocita.Value, (int)iniziativa.Value, (int)dadiVitaNumericUpDown.Value);
+                    (int)forza.Value, (int)volonta.Value, (int)riflessi.Value, (int)tempra.Value, (int)velocita.Value, (int)iniziativa.Value, (int)dadiVitaNumericUpDown.Value, new Couple<double>((double)dimensionWidth.Value, (double)dimensionHeight.Value));
                         dataMap.Characters.Add(c);
                         ((Form1)this.Parent).UpdateCharacterList();
                         found = true;
@@ -321,6 +339,35 @@ namespace DDMap
         private void newArchetypeBtn_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void sizeDDL_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (((Common.DDSize)sizeDDL.SelectedItem).Equals(Common.DDSize.Grande) ||
+                ((Common.DDSize)sizeDDL.SelectedItem).Equals(Common.DDSize.Enorme) ||
+                ((Common.DDSize)sizeDDL.SelectedItem).Equals(Common.DDSize.Colossale) ||
+                ((Common.DDSize)sizeDDL.SelectedItem).Equals(Common.DDSize.Mastodontica))
+            {
+                dimensionWidth.Enabled = true;
+                dimensionHeight.Enabled = true;
+                if (((Common.DDSize)sizeDDL.SelectedItem).Equals(Common.DDSize.Grande))
+                {
+                    dimensionWidth.Value = 1;
+                    dimensionHeight.Value = 1;
+                }
+                else
+                {
+                    dimensionWidth.Value = (decimal)Common.Taglie[(Common.DDSize)sizeDDL.SelectedItem].i;
+                    dimensionHeight.Value = (decimal)Common.Taglie[(Common.DDSize)sizeDDL.SelectedItem].j;
+                }
+            }
+            else
+            {
+                dimensionWidth.Value = 0;
+                dimensionHeight.Value = 0;
+                dimensionWidth.Enabled = false;
+                dimensionHeight.Enabled = false;
+            }
         }
     }
 }
