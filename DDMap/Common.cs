@@ -39,5 +39,10 @@ namespace DDMap
         public const string AllFiles = "All files (*.*)" + "|*.*";
 
         public static Dictionary<DDSize, Couple<double>> Taglie { get => taglie; set => taglie = value; }
+
+        public static bool IsRunningOnMono()
+        {
+            return Type.GetType("Mono.Runtime") != null;
+        }
     }
 }

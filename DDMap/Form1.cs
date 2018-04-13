@@ -47,6 +47,13 @@ namespace DDMap
                 {
                     Directory.CreateDirectory(Path.GetDirectoryName(Application.ExecutablePath) + @"\Archetypes");
                 }
+                if (!Directory.Exists(Path.GetDirectoryName(Application.ExecutablePath) + @"\Logs"))
+                {
+                    Directory.CreateDirectory(Path.GetDirectoryName(Application.ExecutablePath) + @"\Logs");
+                    using (StreamWriter sw = File.CreateText(Path.GetDirectoryName(Application.ExecutablePath) + @"\Logs\logs.txt"))
+                    {
+                    }
+                }
             }
             catch (Exception)
             {
@@ -160,7 +167,7 @@ namespace DDMap
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
+                    Logger.Write("Error in LoadMap. Original error: " + ex.Message);
                 }
             }
         }
@@ -184,7 +191,7 @@ namespace DDMap
                 }
                 catch (Exception ex)
                 {
-                    string exception = ex.ToString();
+                    Logger.Write("Error in SaveMap. Original error: " + ex.ToString());
                     stream.Close();
                 }
             }

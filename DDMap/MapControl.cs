@@ -91,7 +91,10 @@ namespace DDMap
                     Math.Abs(e.Y - mDownPos.Y) >= SystemInformation.DragSize.Height)
                     mapBox.DoDragDrop(new DragObject(listBox1, c), DragDropEffects.All);
             }
-            catch { }
+            catch (Exception ex)
+            {
+                Logger.Write("Error in char_MouseMove. Original error: " + ex.ToString());
+            }
         }
 
         private void map_DragEnter(object sender, DragEventArgs e)
@@ -108,7 +111,10 @@ namespace DDMap
                 Character c = (Character)obj.item;
                 InsertCharacter(c, pt);
             }
-            catch { }
+            catch(Exception ex)
+            {
+                Logger.Write("Error in map_DragDrop. Original error: " + ex.ToString());
+            }
 
         }
 
@@ -313,7 +319,7 @@ namespace DDMap
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error: " + ex);
+                    Logger.Write("Error in ShowMyDialogBox. Original error: " + ex.ToString());
                 }
             }
         }
@@ -330,7 +336,10 @@ namespace DDMap
                 sb.Append("PF: " + c.PF + "\n");
                 tip.Show(sb.ToString(), b);
             }
-            catch { }
+            catch (Exception ex)
+            {
+                Logger.Write("Error in ShowTooltip. Original error: " + ex.ToString());
+            }
         }
 
         private void HideTooltip(object sender, EventArgs e)
